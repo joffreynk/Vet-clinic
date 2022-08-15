@@ -1,4 +1,4 @@
-# curriculum-databases-projects-template
+# Vet clinic database
 
 > This project uses a relational database to create database to store animals, animals' owners, clinic employes and visits. it has schema, queries and data usedin the project. To use first open yor SQL database then run schema.sql codes, after run data.sql codes and lastly run queries.sql codes
 
