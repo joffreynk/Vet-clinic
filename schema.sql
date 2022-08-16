@@ -12,3 +12,8 @@ CREATE TABLE animals(
   neutered boolean,
   weight_kg float
 );
+
+/* update table to add column: DAY 2
+*/
+
+ALTER TABLE animals ADD spicies varchar(250) NULL;
