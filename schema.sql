@@ -13,7 +13,28 @@ CREATE TABLE animals(
   weight_kg float
 );
 
-/* update table to add column: DAY 2
+/* 
+update table to add column: DAY 2
 */
 
 ALTER TABLE animals ADD spicies varchar(250) NULL;
+
+/*
+  Vet clinic database: query multiple tables: DAY 3
+*/
+
+CREATE TABLE owners (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  fulll_name varchar(250) not NULL,
+  age INT
+);
+
+CREATE TABLE spicies(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name varchar(250) not NULL
+);
+
+ALTER TABLE animals DROP spicies;
+
+ALTER TABLE animals ADD spicies_id INT REFERENCES spicies(id);
+ALTER TABLE animals ADD  owner_id  INT REFERENCES owners(id);

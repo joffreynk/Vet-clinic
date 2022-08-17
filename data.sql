@@ -16,3 +16,20 @@ INSERT INTO animals (name, date_of_birth, escape_attemps, neutered, weight_kg) V
 INSERT INTO animals (name, date_of_birth, escape_attemps, neutered, weight_kg) VALUES ('Boarmon', 'Jun 7, 2005', 7, TRUE, 20.4);
 INSERT INTO animals (name, date_of_birth, escape_attemps, neutered, weight_kg) VALUES ('Blossom', 'Oct 13, 1998', 3, TRUE, 17);
 INSERT INTO animals (name, date_of_birth, escape_attemps, neutered, weight_kg) VALUES ('Ditto', 'May 14, 2022', 4, TRUE, 22);
+
+/*
+  Vet clinic database: query multiple tables: DAY 3
+*/
+
+INSERT INTO owners (fulll_name, age) VALUES ('Sam Smith',34), ('Jennifer Orwell',19), ('Bob',45), ('Melody Pond',77), ('Dean Winchester', 14), ('Jodie Whittaker',38);
+
+INSERT INTO spicies (name) VALUES ('Pokemon'), ('Digimon');
+
+UPDATE animals SET spicies_id = (SELECT spicies.id FROM spicies WHERE spicies.name = 'Digimon') WHERE animals.name LIKE '%mon';
+UPDATE animals SET spicies_id = (SELECT spicies.id FROM spicies WHERE spicies.name = 'Pokemon') WHERE animals.name NOT LIKE '%mon';
+
+UPDATE animals SET owner_id = (SELECT owners.id FROM owners WHERE owners.fulll_name = 'Sam Smith') WHERE animals.name = 'Agumon';
+UPDATE animals SET owner_id = (SELECT owners.id FROM owners WHERE owners.fulll_name = 'Jennifer Orwell') WHERE animals.name = 'Gabumon' OR animals.name = 'Pikachu';
+UPDATE animals SET owner_id = (SELECT owners.id FROM owners WHERE owners.fulll_name = 'Bob') WHERE animals.name = 'Devimon' OR animals.name = 'Plantmon';
+UPDATE animals SET owner_id = (SELECT owners.id FROM owners WHERE owners.fulll_name = 'Melody Pond') WHERE animals.name = 'Charmander' OR animals.name = 'Squirtle' OR animals.name = 'Blossom';
+UPDATE animals SET owner_id = (SELECT owners.id FROM owners WHERE owners.fulll_name = 'Dean Winchester') WHERE animals.name = 'Angemon' OR animals.name = 'Boarmon';
