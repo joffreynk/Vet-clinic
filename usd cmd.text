@@ -1,5 +1,0 @@
-sudo -s -u postgres
-
-SELECT * FROM 
-
-psql vet_clinic
