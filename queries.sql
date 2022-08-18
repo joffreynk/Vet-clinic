@@ -38,3 +38,28 @@ SELECT spicies.name spicies, COUNT(animals.name) FROM animals JOIN spicies ON an
 SELECT animals.name animals FROM animals JOIN owners ON animals.owner_id = owners.id JOIN spicies ON spicies.id = animals.spicies_id WHERE owners.fulll_name = 'Jennifer Orwell' AND spicies.name = 'Digimon';
 SELECT animals.name animals FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.fulll_name = 'Dean Winchester' AND animals.escape_attemps = 0;
 SELECT owners.fulll_name owners, count(animals.name) FROM owners JOIN animals ON animals.owner_id = owners.id GROUP BY owners.fulll_name ORDER BY COUNT(animals.name) DESC LIMIT 1;
+
+/*
+  Vet clinic database: add "join table" for visits: DAY 4
+*/
+
+SELECT LAST(animals.name) animal FROM animals JOIN visits ON animals.id = visits.animal_id JOIN vets ON vets.id = visits.vet_id WHERE Vet.name = 'William Tatcher';
+
+SELECT COUNT(animals.name) animals FROM animals JOIN visits ON animals.id = visits.animal_id JOIN vets ON vets.id = visits.vet_id WHERE Vet.name = 'Stephanie Mendez' GROUP BY animals.name;
+
+SELECT vet.id, vet.name vet_name, vet.age vet_age, vet.date_of_graduation vet_date_of_graduation , spicies.name specializations_animal  FROM vet LEFT JOIN specializations ON vet.id = specializations.vet_id LEFT JOIN spicies ON specializations.spicies_id = spicies.id;
+
+SELECT animals.name animals FROM animals JOIN visits ON animals.id = visits.animal_id JOIN vet ON vet.id = visits.vet_id WHERE vet.name = 'Stephanie Mendez' AND visits.date_of_visit BETWEEN 'April 1, 2020' AND 'August 30, 2020';
+
+SELECT animals.name animals, COUNT(animals.name) visited_times FROM animals JOIN visits.animal_id = animals.id JOIN vet ON vet.id = visits.vet_id GROUP BY animals.name;
+
+SELECT FIRST(animals.name) animal FROM animals JOIN visits ON animals.id = visits.animal_id JOIN vets ON vets.id = visits.vet_id WHERE Vet.name = 'Maisy Smith';
+
+
+
+
+
+
+
+SELECT vet.id, vet.name vet_name, vet.age vet_age, vet.date_of_graduation vet_date_of_graduation , spicies.name specializations_animal  FROM vet LEFT JOIN specializations ON vet.id = specializations.vet_id LEFT JOIN spicies ON specializations.spicies_id = spicies.id;
+

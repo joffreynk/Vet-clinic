@@ -38,3 +38,34 @@ ALTER TABLE animals DROP spicies;
 
 ALTER TABLE animals ADD spicies_id INT REFERENCES spicies(id);
 ALTER TABLE animals ADD  owner_id  INT REFERENCES owners(id);
+
+
+/*
+  Vet clinic database: add "join table" for visits: DAY 4
+*/
+
+CREATE TABLE vets(
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name varchar(250),
+  age INT,
+  date_of_graduation date
+);
+
+CREATE TABLE specializations(
+  vet_id INT NOT NULL,
+  spicies_id INT NOT NULL,
+  PRIMARY KEY(vet_id, spicies_id)
+);
+
+CREATE TABLE visits(
+  vet_id INT NOT NULL,
+  animal_id INT NOT NULL,
+  date_of_visit date NOT NULL,
+  PRIMARY KEY(vet_id, animal_id, date_of_visit)
+);
+
+ALTER TABLE visits ADD FOREIGN KEY(animal_id) REFERENCES animals(id);
+ALTER TABLE visits ADD FOREIGN KEY(vet_id) REFERENCES vets(id);
+
+ALTER TABLE specializations ADD FOREIGN KEY(spicies_id) REFERENCES spicies(id);
+ALTER TABLE specializations ADD FOREIGN KEY(vet_id) REFERENCES vets(id);
