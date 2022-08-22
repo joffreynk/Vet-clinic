@@ -14,12 +14,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Joffrey Nkeshima**
 
 - GitHub: [@joffreynk](https://github.com/joffreynk)
 - Twitter: [@joffreynk](https://twitter.com/joffreynk)
 - LinkedIn: [joffreynk](https://linkedin.com/in/joffreynk)
 
+👤 **Hans Zizold**
+
+- GitHub: [@githubhandle](https://github.com/HansZizold)
+- Twitter: [@twitterhandle](https://twitter.com/hanzio27)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hans-paul-zizold-37129037/)
 
 ## 🤝 Contributing
 
