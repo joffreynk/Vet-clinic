@@ -14,7 +14,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Joffrey Nkeshima**
+👤 **Joffrey Nkeshimana**
 
 - GitHub: [@joffreynk](https://github.com/joffreynk)
 - Twitter: [@joffreynk](https://twitter.com/joffreynk)
