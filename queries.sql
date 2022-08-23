@@ -79,4 +79,3 @@ SELECT COUNT(vets.name) FROM vets WHERE vets.id NOT IN (SELECT vet_id FROM speci
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 
 SELECT  spicies.name,  count(*)  FROM visits JOIN animals ON visits.animal_id = animals.id JOIN spicies ON animals.spicies_id = spicies.id JOIN vets ON visits.vet_id = vets.id GROUP BY spicies.name, vets.name HAVING vets.name = 'Maisy Smith' ORDER BY count(*) DESC LIMIT 1;
-

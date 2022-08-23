@@ -69,3 +69,10 @@ ALTER TABLE visits ADD FOREIGN KEY(vet_id) REFERENCES vets(id);
 
 ALTER TABLE specializations ADD FOREIGN KEY(spicies_id) REFERENCES spicies(id);
 ALTER TABLE specializations ADD FOREIGN KEY(vet_id) REFERENCES vets(id);
+
+/*
+  Vet clinic database: database performance audit: group work DAY 1
+*/
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
