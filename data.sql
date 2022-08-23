@@ -76,11 +76,9 @@ INSERT INTO visits (vet_id, animal_id, date_of_visit) VALUES ((SELECT id FROM ve
 INSERT INTO visits (vet_id, animal_id, date_of_visit) VALUES ((SELECT id FROM vets WHERE name = 'Stephanie Mendez'), (SELECT id FROM animals WHERE name = 'Blossom'), 'May 24, 2020');
 INSERT INTO visits (vet_id, animal_id, date_of_visit) VALUES ((SELECT id FROM vets WHERE name = 'William Tatcher'), (SELECT id FROM animals WHERE name = 'Blossom'), 'Jan 11, 2021');
 
-
 /*
   Vet clinic database: database performance audit: group work DAY 1
 */
-
 
 -- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
 INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_id, (SELECT id FROM vets) vet_id, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
